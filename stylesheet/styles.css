@@ -1,0 +1,23 @@
+
+body
+{
+    font-family: "Calibri Light", "Arial", sans-serif;
+    background-color: aliceblue;
+    margin: 0;
+}
+.header
+{
+    background-color: #b4b1b8;
+    padding: 10px;
+}
+.header li
+{
+    display: inline;
+    padding: 15px;
+}
+.header a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 130%;
+}
