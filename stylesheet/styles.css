@@ -2,22 +2,66 @@
 body
 {
     font-family: "Calibri Light", "Arial", sans-serif;
-    background-color: aliceblue;
+    background: url('../images/SVG/bg.svg') no-repeat;
+    background-size: cover;
     margin: 0;
 }
 .header
 {
-    background-color: #b4b1b8;
+    /*background-color: #b4b1b8;*/
     padding: 10px;
 }
 .header li
 {
     display: inline;
-    padding: 15px;
+    padding: 85px;
 }
 .header a
 {
     text-decoration: none;
     color: black;
-    font-size: 130%;
+    font-size: 140%;
+}
+.header a:hover
+{
+    text-shadow: 0.1px 0.1px #111111;
+}
+.menu
+{
+    width: 150px;
+    height: 540px;
+    margin-left: 2%;
+    margin-top: 10%;
+    display: inline-flex;
+}
+.menu ul[class=home]
+{
+    padding: 25px;
+    background-color: rgba(249, 249, 249, 0.25);
+    box-shadow: 2px 2px 5px #b3b2ff;
+    display: block;
+    margin: 2%;
+}
+.menu ul[class=projects]
+{
+    padding: 25px;
+    background-color: rgba(249, 249, 249, 0.25);
+    box-shadow: 2px 2px 5px #b3b2ff;
+    display: none;
+    margin: 2%;
+}
+.menu li
+{
+    list-style-type: none;
+    padding: 5px;
+}
+.menu a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 140%;
+}
+.menu a:hover
+{
+    text-shadow: 0.1px 0.1px #111111;
 }
