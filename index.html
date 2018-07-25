@@ -6,24 +6,41 @@
     <link href="stylesheet/styles.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+<div class="wrapper">
     <div class="header">
         <ul class="navigation">
-            <li><a href="" class="main-page">Strona główna</a></li>
-            <li><a href="" class="projects">Projekty</a></li>
-            <li><a href="" class="about">O mnie</a></li>
+            <li><a href="" id="main-page">Strona główna</a></li>
+            <li><a href="" id="projects">Projekty</a></li>
+            <li><a href="" id="about">O mnie</a></li>
         </ul>
     </div><!-- Header of main page -->
     <div class="menu">
-        <ul class="home">
-            <li><a href="" class="projects">Projekty</a></li>
-            <li><a href="" class="about">O mnie</a></li>
-        </ul>
-        <ul class="projects">
-            <li><a href="" class="java">Java</a></li>
-            <li><a href="" class="C">C++</a></li>
-            <li><a href="" class="assembler">Assembler</a></li>
-            <li><a href="" class="avr">AVR</a></li>
-        </ul>
+        <div class="home">
+            <ul >
+                <li><a href="" class="projects">Projekty</a></li>
+                <li><a href="" class="about">O mnie</a></li>
+            </ul>
+        </div>
+        <div class="projects">
+            <ul>
+                <li><a href="" class="java">Java</a></li>
+                <li><a href="" class="C">C++</a></li>
+                <li><a href="" class="assembler">Assembler</a></li>
+                <li><a href="" class="avr">AVR</a></li>
+            </ul>
+        </div>
+    </div><!-- Menu sidebar of main page -->
+    <div class="temp">
+        <p>
+            Najczęściej spotykanym zastosowaniem języka JavaScript są strony internetowe. Skrypty te służą najczęściej do zapewnienia interakcji poprzez reagowanie na zdarzenia,
+            walidacji danych wprowadzanych w formularzach lub tworzenia złożonych efektów wizualnych. Skrypty JavaScriptu uruchamiane przez strony internetowe mają znacznie ograniczony
+            dostęp do komputera użytkownika. Po stronie serwera JavaScript może działać w postaci node.js lub Ringo[5].
+
+            W języku JavaScript można także pisać pełnoprawne aplikacje. Fundacja Mozilla udostępnia środowisko złożone z technologii takich jak XUL, XBL, XPCOM oraz JSLib.
+            Umożliwiają one tworzenie korzystających z zasobów systemowych aplikacji o graficznym interfejsie użytkownika dopasowującym się do danej platformy. Przykładem aplikacji napisanych z użyciem JS i XUL może być klient IRC o nazwie ChatZilla, domyślnie dołączony do pakietu Mozilla. Microsoft udostępnia biblioteki umożliwiające tworzenie aplikacji JScript jako część środowiska Windows Scripting Host. Ponadto JScript.NET jest jednym z podstawowych języków środowiska .NET.
+            Istnieje także stworzone przez IBM środowisko SashXB dla systemu Linux, które umożliwia tworzenie w języku JavaScript aplikacji korzystających z GTK+, GNOME i OpenLDAP.
+        </p>
     </div>
+</div>
 </body>
 </html>
