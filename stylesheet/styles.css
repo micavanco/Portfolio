@@ -71,7 +71,26 @@ div.home, div.projects-lang, div.projects
     box-shadow: 2px 2px 5px #b3b2ff;
     display: block;
 }
-div.projects-lang::before, div.projects::before
+div.projects-lang, div.projects
+{
+    display: none;
+}
+div.projects-c
+{
+    font-size: 78%;
+}
+div.projects-lang::before
+{
+    position: absolute;
+    content: '';
+    width: 18px;
+    height: 30px;
+    margin-left: -18px;
+    margin-top: 45px;
+    background-color: rgba(249, 249, 249, 0.25);
+    transform: skew(0,20deg);
+}
+ div.projects-element
 {
     position: absolute;
     content: '';
@@ -119,7 +138,11 @@ div.projects-lang::before, div.projects::before
     text-align: center;
     padding: 10px;
 }
-.temp
+/*------- Footer -------*/
+.footer
 {
     padding-top: 200%;
+    text-align: center;
+    font-size: 200%;
+    letter-spacing: 2px;
 }
