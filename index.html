@@ -9,69 +9,70 @@
 <div class="wrapper">
     <div class="header">
         <ul class="navigation">
-            <li><a href="" id="main-page">Strona główna</a></li>
-            <li><a href="" id="projects">Projekty</a></li>
-            <li><a href="" id="about">O mnie</a></li>
+            <li><a href="#" id="main-page">Strona główna</a></li>
+            <li><a href="#" id="projects">Projekty</a></li>
+            <li><a href="#" id="about">O mnie</a></li>
         </ul>
     </div><!-- Header of main page -->
     <div class="menu">
         <div class="home">
             <ul >
-                <li><a href="" class="projects">Projekty</a></li>
-                <li><a href="" class="about">O mnie</a></li>
+                <li><a href="#" class="projects">Projekty</a></li>
+                <li><a href="#" class="about">O mnie</a></li>
             </ul>
         </div>
         <div class="projects-lang">
             <ul>
-                <li><a href="" class="java">Java</a></li>
-                <li><a href="" class="C">C++</a></li>
-                <li><a href="" class="assembler">Assembler</a></li>
-                <li><a href="" class="avr">AVR</a></li>
+                <li><a href="#" class="java">Java</a></li>
+                <li><a href="#" class="C">C++</a></li>
+                <li><a href="#" class="assembler">Assembler</a></li>
+                <li><a href="#" class="avr">AVR</a></li>
             </ul>
         </div>
         <div class="projects">
             <div class="projects-element"></div>
             <div class="projects-java">
-                <ul>
-                    <li><a href="" >NorskMemo</a></li>
-                    <li><a href="" >PagesCheck</a></li>
-                    <li><a href="" >AnalizatorBVH</a></li>
-                    <li><a href="" >Arkanoid</a></li>
+                <ul id="java-list">
+                    <li><a href="#" id="bvh">AnalizatorBVH</a></li>
+                    <li><a href="#" id="norsk">NorskMemo</a></li>
+                    <li><a href="#" id="pagescheck">PagesCheck</a></li>
+                    <li><a href="#" id="arkanoid">Arkanoid</a></li>
                 </ul>
             </div>
             <div class="projects-c">
-                <ul>
-                    <li><a href="" >SnakeQt</a></li>
-                    <li><a href="" >COMCommunicator</a></li>
-                    <li><a href="" >MovementAnalyzer</a></li>
+                <ul id="c-list">
+                    <li><a href="#" >Movement</br>Analyzer</a></li>
+                    <li><a href="#" >SnakeQt</a></li>
+                    <li><a href="#" >COM</br>Communicator</a></li>
                 </ul>
             </div>
             <div class="projects-assembler">
-                <ul>
-                    <li><a href="" >Assembler</br>Temperature</br>Measurement</a></li>
+                <ul id="assembler-list">
+                    <li><a href="#" >Assembler</br>Temperature</br>Measurement</a></li>
                 </ul>
             </div>
             <div class="projects-avr">
-                <ul>
-                    <li><a href="" >Nan</a></li>
-                    <li><a href="" >Nan</a></li>
-                    <li><a href="" >Nan</a></li>
-                    <li><a href="" >Nan</a></li>
+                <ul id="avr-list">
+                    <li><a href="#" >Nan</a></li>
+                    <li><a href="#" >Nan</a></li>
+                    <li><a href="#" >Nan</a></li>
+                    <li><a href="#" >Nan</a></li>
                 </ul>
             </div>
         </div>
     </div><!-- Menu sidebar of main page -->
-    <div class="content">
+    <div id="content">
         <h1>NorskMemo</h1>
-    </div>
+    </div><!-- Main content container -->
     <div class="footer">
         <p>
             Copyright &copy<span id="footer_year"></span>
         </p>
-    </div>
+    </div><!-- Footer of a website -->
 </div>
     <script type="application/javascript" src="scripts/jquery-3.3.1.js"></script>
     <script type="application/javascript" src="scripts/add-footer.js"></script>
     <script type="application/javascript" src="scripts/side-menu.js"></script>
+    <script type="application/javascript" src="scripts/content-update.js"></script>
 </body>
 </html>

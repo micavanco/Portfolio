@@ -1,0 +1,24 @@
+﻿<h1>PagesCheck</h1>
+<h2>Aplikacja służąca do sprawdzenia wymaganej ilości stron do przeczytania dziennie w celu ukończenia 
+danej książki/książek o tematyce IT w wyznaczonym terminie.</h2>
+<h3>Opis działania</h3> 
+<p>Użytkownik w pierwszym polu edycyjnym z podpisem „Wpisz termin”, wpisuje wyznaczony termin na przeczytanie.  
+Pole edycyjne z podpisem „Wpisz nr strony” służy do wpisania strony aktualnie czytanej książki lub 0 gdy użytkownik nie zaczął. 
+Następnie należy wpisać ilość stron książki lub książek (ze znakiem ‘+’). 
+Kolejne dwa pola powinno się wypełniać od lewej do prawej, wpisując tytuł książki, a w drugiej kolejności autora. 
+Wyjście z pola zawierającego dane autora, skutkuję automatycznym załadowaniem ze strony Helion.pl danych odpowiadających kryteriom wyszukiwania 
+(zazwyczaj wystarczy wypełnić tylko jedno pole [dowolnie ze znakami lub bez polskich znaków], aby otrzymać bazę danych). 
+Po wybraniu właściwego tytułu, użytkownik załadowuje wszystkie dane do pól wraz z okładką książki w postaci ikony wyświetlanej po prawej stronie.</p> 
+<h3>Dodatkowe opcje</h3> 
+<ul> 
+<li>Zapis do pliku tekstowego wygenerowanych danych wraz z aktualną datą.</li> 
+<li>Możliwość zmiany koloru tła oraz rozmiaru czcionki.</li> 
+<li>Automatyczny zapis preferencji użytkownika w trakcie zamykania aplikacji (rozmiary okna i czcionki oraz kolor tła ).</li> 
+<li>Pasek ładowania wyświetlany w momencie wczytywania danych ze strony internetowej.</li> 
+</ul> 
+<h3>Nabyte umiejętności</h3>
+<ul> 
+<li>Wczytywanie danych ze stron internetowych (klasa BufferedReader).</li> 
+<li>Operacje na datach (klasy DataFormat i Calendar).</li> 
+<li>Zapis i odczyt ustawień użytkownika (klasa Proporties).</li> 
+</ul>

@@ -15,7 +15,7 @@ $(function ()
         var $avrMenu = $('div.projects-avr');
         var $elMenu = $('div.projects-element');
 
-        $projectsButton.on('mouseover', function () {
+        $projectsButton.on('mouseover click', function () {
             $langMenu.css(
                 {
                     'display': 'block',
@@ -23,7 +23,7 @@ $(function ()
             );
         });
 
-        $javaButton.on('mouseover', function () {
+        $javaButton.on('mouseover click', function () {
             $projectsMenu.css(
                 {
                     'display': 'block'
@@ -56,7 +56,7 @@ $(function ()
             );
         });
 
-        $cButton.on('mouseover', function () {
+        $cButton.on('mouseover click', function () {
             $projectsMenu.css(
                 {
                     'display': 'block'
@@ -89,7 +89,7 @@ $(function ()
             );
         });
 
-        $assemblerButton.on('mouseover', function () {
+        $assemblerButton.on('mouseover click', function () {
             $projectsMenu.css(
                 {
                     'display': 'block'
@@ -122,7 +122,7 @@ $(function ()
             );
         });
 
-        $avrButton.on('mouseover', function () {
+        $avrButton.on('mouseover click', function () {
             $projectsMenu.css(
                 {
                     'display': 'block'

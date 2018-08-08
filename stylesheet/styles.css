@@ -67,17 +67,13 @@ div.home, div.projects-lang, div.projects
     height: 540px;
     margin-left: 10px;
     margin-right: 10px;
-    background-color: rgba(249, 249, 249, 0.25);
+    background-color: rgba(249, 249, 249, 0.5);
     box-shadow: 2px 2px 5px #b3b2ff;
     display: block;
 }
 div.projects-lang, div.projects
 {
     display: none;
-}
-div.projects-c
-{
-    font-size: 78%;
 }
 div.projects-lang::before
 {
@@ -121,7 +117,7 @@ div.projects-lang::before
     text-shadow: 0.1px 0.1px #111111;
 }
 /*------- Content -------*/
-.content
+#content
 {
     width: 760px;
     height: 1080px;
@@ -133,7 +129,12 @@ div.projects-lang::before
     position: absolute;
     z-index: 9;
 }
-.content h1
+#content h1, h2 , h3
+{
+    text-align: center;
+    padding: 10px;
+}
+#content p
 {
     text-align: center;
     padding: 10px;
