@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+
+/*
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Montserrat', sans-serif;
+*/
+/*
+    COLORS:
+    White:#F5F5F5
+    Gold: #DA9A2A
+    Black: #1D1D1D
+    Grey: #9B9B9B
+    Grey light: #B0B0B0
+
+ */
+
+/* -------------- OVERALL SECTION ------------------- */
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: #1D1D1D;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100%;
+}
+
+/* -------------- HEADER SECTION ------------------- */
+
+.header{
+    height: 89px;
+    background: rgba(176,176,176,0.37);
+    width: 100vw;
+    padding: 0 260px 0 260px;
+    position: fixed;
+    margin: 0;
+}
+
+.menu-btn{
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    width: 151px;
+    height: 68px;
+    font-size: 16px;
+    border-radius: 4px;
+    float: right;
+    background: #1D1D1D;
+    margin: 11px 20px 10px 0;
+    cursor: pointer;
+}
+
+.logo{
+    font-weight: 800;
+    color: #1D1D1D;
+    font-size: 36px;
+}
+
+.logo-container{
+    padding: 22px 0 20px 32px;
+    width: 148px;
+    height: 89px;
+    margin: 0;
+    float: left;
+}
+
+#menu-btn-projects{
+    padding: 23px 31px 20px 23px;
+}
+
+#menu-btn-projects > a {
+    color: #F5F5F5;
+}
+
+#menu-btn-about{
+    padding: 23px 25px 20px 43px;
+}
+
+#menu-btn-about > a{
+    color: #F5F5F5;
+}
+
+#menu-flag-b {
+     float: right;
+     margin: 31px 3px 30px 25px;
+     cursor: pointer;
+ }
+
+#menu-flag-p {
+    float: right;
+    margin: 31px 0 30px 5px;
+    cursor: pointer;
+}
+
+/* -------------- CONTENT SECTION ------------------- */
+
+.content{
+    max-width: 1400px;
+    margin: 0 260px;
+    padding-top: 118px;
+}
+
+#front-content{
+    max-width: 1180px;
+    height: 814px;
+    margin: 0 118px;
+    border: 1px solid #cdcdcd;
+}
+
+#front-text{
+    width: 547px;
+    height: 450px;
+    margin: 25% 0 0 15%;
+    float: left;
+}
+
+#front-text>h1{
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+#front-text>h2{
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #DA9A2A;
+}
+
+#front-text>h3{
+    font-weight: 300;
+}
+
+
+ #signature{
+     width: 162px;
+     height: 60px;
+     float: right;
+ }
+
+ #face{
+     float: right;
+     margin: 18% 10% 0 0;
+     border-radius: 14px;
+ }
+
+ .info-box-left{
+     border: 1px solid #cdcdcd;
+     width: 592px;
+     height: 571px;
+     margin: 125px 0 125px 118px;
+     float: left;
+ }
+
+.info-box-right{
+    border: 1px solid #cdcdcd;
+    width: 592px;
+    height: 571px;
+    margin: 125px 118px 125px 0;
+    float: right;
+}
+
+.img-box-right{
+    border: 1px solid #cdcdcd;
+    width: 492px;
+    height: 571px;
+    margin: 125px 118px 125px 0;
+    float: right;
+}
+
+.img-box-left{
+    border: 1px solid #cdcdcd;
+    width: 492px;
+    height: 571px;
+    margin: 125px 0 125px 118px;
+    float: left;
+}
+
+
+/* -------------- FOOTER SECTION ------------------- */
+
+.footer{
+    height: 120px;
+    background: #9B9B9B;
+    width: 100%;
+    padding: 0 260px 0 260px;
+    clear: both;
+}
