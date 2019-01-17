@@ -1,13 +1,5 @@
 import React, {Component} from 'react';
-import styled, { keyframes } from 'styled-components';
-
-const hoverProgressBar = (width) =>{
-    return keyframes`
-        from: {width: 0};
-        to: {width: ${width}}
-    `;
-
-};
+import styled from 'styled-components';
 
 
 class LangBar extends Component{
@@ -108,8 +100,11 @@ class LangBar extends Component{
         else if(this.props.width>=40 && this.props.width<60)tab.forEach(e=>{
             e.style.background="#f0f451"
         });
-        else if(this.props.width>=60 && this.props.width<120)tab.forEach(e=>{
+        else if(this.props.width>=60 && this.props.width<90)tab.forEach(e=>{
             e.style.background="#aaf4c9"
+        });
+        else if(this.props.width>=90 && this.props.width<120)tab.forEach(e=>{
+            e.style.background="#94f4f4"
         });
         else if(this.props.width>=120 && this.props.width<130)
             tab.forEach(e=>{

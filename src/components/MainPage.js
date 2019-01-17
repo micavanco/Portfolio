@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LangBar from './LangBar';
+import HuntingGame from './HuntingGame';
 
 class MainPage extends Component{
 
@@ -67,7 +68,7 @@ class MainPage extends Component{
                         </div>
                         <div className="lang-row" id="java">
                             <h3 className="lang-head">Średni</h3>
-                            <LangBar width={50} lang={"java"}/>
+                            <LangBar width={90} lang={"java"}/>
                             <h3 className="lang-info">Java</h3>
                         </div>
                         <div className="lang-row" id="spring">
@@ -76,22 +77,46 @@ class MainPage extends Component{
                             <h3 className="lang-info">Spring</h3>
                         </div>
                         <div className="lang-row" id="javascript">
-                            <h3 className="lang-head">Początkujący</h3>
+                            <h3 className="lang-head">Średni</h3>
                             <LangBar width={100} lang={"javascript"}/>
                             <h3 className="lang-info">JavaScript</h3>
                         </div>
                         <div className="lang-row" id="html">
-                            <h3 className="lang-head">Początkujący</h3>
-                            <LangBar width={149} lang={"html"}/>
+                            <h3 className="lang-head">Średni</h3>
+                            <LangBar width={61} lang={"html"}/>
                             <h3 className="lang-info">Html</h3>
                         </div>
                     </div>
-                    <div className="img-box-left">
-
-                    </div>
+                    <HuntingGame/>
                     <div className="info-box-left">
-
+                            <h1 className="info-box-left-head">Doświadczenie</h1>
+                            <div className="lang-row" id="assembler" >
+                                <h3 className="lang-head">Początkujący</h3>
+                                <LangBar width={20} lang={"assembler"}/>
+                                <h3 className="lang-info">Assembler</h3>
+                            </div>
+                            <div className="lang-row" id="avr">
+                                <h3 className="lang-head">Średni</h3>
+                                <LangBar width={67} lang={"avr"}/>
+                                <h3 className="lang-info">AVR w C</h3>
+                            </div>
+                            <div className="lang-row" id="react">
+                                <h3 className="lang-head">Średni</h3>
+                                <LangBar width={110} lang={"react"}/>
+                                <h3 className="lang-info">React</h3>
+                            </div>
+                            <div className="lang-row" id="qt">
+                                <h3 className="lang-head">Średni</h3>
+                                <LangBar width={78} lang={"qt"}/>
+                                <h3 className="lang-info">Qt</h3>
+                            </div>
+                            <div className="lang-row" id="openCV">
+                                <h3 className="lang-head">Średni</h3>
+                                <LangBar width={61} lang={"openCV"}/>
+                                <h3 className="lang-info">OpenCV</h3>
+                            </div>
                     </div>
+
                     <div className="img-box-right">
 
                     </div>

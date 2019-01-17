@@ -253,7 +253,6 @@ a {
 }
 
 .img-box-left{
-    border: 1px solid #cdcdcd;
     width: 492px;
     height: 571px;
     margin: 125px 0 125px 118px;
@@ -304,6 +303,19 @@ a {
     margin: 5px 0 0 8px;
     height: 15px;
     transform: skewX(-19deg);
+}
+
+.game
+{
+    background: url("../img/birds-land.png");
+    width: 417px;
+    height: 572px;
+    cursor: crosshair;
+}
+
+#bird1
+{
+    transition: margin 3000ms ease-in-out;
 }
 
 /* -------------- FOOTER SECTION ------------------- */
