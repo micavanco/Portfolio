@@ -7,9 +7,9 @@ import Projects from './Projects';
 class App extends Component{
     render() {
         return(
-        <div>
+        <div className="reset">
             <BrowserRouter>
-                <div>
+                <div className="reset">
                     <Route path="/" exact component={MainPage} />
                     <Route path="/projects" component={Projects} />
                 </div>

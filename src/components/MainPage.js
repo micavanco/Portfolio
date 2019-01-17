@@ -1,27 +1,28 @@
 import React, {Component} from 'react';
+import LangBar from './LangBar';
 
 class MainPage extends Component{
 
     render() {
         return(
-            <div>
+            <div className="content">
                 {/* Header section */}
                 <header className="header">
-                    <div className="logo-container">
-                        <a href="#" className="logo">Olech</a>
-                    </div>
-                    <img src="../../img/britainFlag.png" id="menu-flag-b"/>
-                    <img src="../../img/polishFlag.png" id="menu-flag-p"/>
-                    <div className="menu-btn" id="menu-btn-projects">>
-                        <a href="#">PROJEKTY</a>
-                    </div>
-                    <div className="menu-btn" id="menu-btn-about">
-                        <a href="#">O MNIE</a>
-                    </div>
+                        <div className="logo-container">
+                            <a href="#" className="logo">Olech</a>
+                        </div>
+                        <img src="../../img/britainFlag.png" id="menu-flag-b"/>
+                        <img src="../../img/polishFlag.png" id="menu-flag-p"/>
+                        <div className="menu-btn" id="menu-btn-projects">>
+                            <a href="#">PROJEKTY</a>
+                        </div>
+                        <div className="menu-btn" id="menu-btn-about">
+                            <a href="#">O MNIE</a>
+                        </div>
                 </header>
 
                 {/* Whole website content */}
-                <div className="content">
+                <div className="content-page">
                     <div id="front-content">
                         <div id="front-text">
                             <h1>Szanowni Państwo</h1>
@@ -33,13 +34,57 @@ class MainPage extends Component{
                         <img src="../../img/face.png" id="face"/>
                     </div>
                     <div className="info-box-left">
-
+                        <h1 className="info-box-left-head">O mnie</h1>
+                        <h3 className="info-box-left-text">Absolwent kierunku Elektrotechnika, wydziału elektrycznego Politechniki Wrocławskiej.
+                            Moje zainteresowanie programowaniem rozpoczęło się w trakcie studiów, podczas odbywania kursu
+                            podstaw programowania w C. Zwykła ciekawość poprowadziła mnie przez obszar kolejnego języka programowania,
+                            C++. Chęć zgłębienia każdego aspektu tego języka przerodziła się w pasję,
+                            która zaowocowała stworzeniem kilku swoich własnych projektów. Jednakże w dalszym ciągu niezaspokojone
+                            zaciekawienie programowaniem, poskutkowało nieodwrotnym skokiem w strefę dalszych języków
+                            wykorzystywanych w innych dziedzinach technologicznych. W związku z tym następnym etapem
+                            było stworzenie kilku aplikacji desktopowych w języku programowania Java. Równocześnie poszerzałem
+                            swoją wiedzę na temat elektroniki i w następstwie tego zrealizowałem parę projektów opartych o
+                            mikrokontrolery AVR w języku C oraz assemblerze. Ostatecznie w swojej wędrówce dotarłem do technologii
+                            wykorzystywanych w przeglądarkach internetowych, tworząc parę aplikacji internetowych opartych na
+                            frameworku JavaScript, React. Ze względu, iż miałem uprzednio styczność z Javą, aktualnie rozwijam
+                            swoją wiedzę na temat programowania serwisów obsługujących strony internetowe, znajdujących się
+                            po stronie serwera. Swoje aplikacje staram się pisać sumiennie i rzetelnie,
+                            dbając jednocześnie o czystość kodu. Oprócz pasji programowania czynnie uprawiam sporty
+                            ekstremalne takie jak: deskorolka, windsurfing i snowboard. Dodatkowo interesuję się
+                            komponowaniem muzyki elektronicznej w popularnych programach muzycznych typu DAW oraz uczę się
+                            gry na pianinie.</h3>
                     </div>
                     <div className="img-box-right">
-
+                        <img src="../../img/star-wars.png" id="star-wars"/>
+                        <img src="../../img/star-wars-head.png" id="star-wars-head"/>
                     </div>
                     <div className="info-box-right">
-
+                        <h1 className="info-box-right-head">Doświadczenie</h1>
+                        <div className="lang-row" id="cplus" >
+                            <h3 className="lang-head">Średnio zaawansowany</h3>
+                            <LangBar width={120} lang={"cplus"}/>
+                            <h3 className="lang-info">C ++</h3>
+                        </div>
+                        <div className="lang-row" id="java">
+                            <h3 className="lang-head">Średni</h3>
+                            <LangBar width={50} lang={"java"}/>
+                            <h3 className="lang-info">Java</h3>
+                        </div>
+                        <div className="lang-row" id="spring">
+                            <h3 className="lang-head">Początkujący</h3>
+                            <LangBar width={30} lang={"spring"}/>
+                            <h3 className="lang-info">Spring</h3>
+                        </div>
+                        <div className="lang-row" id="javascript">
+                            <h3 className="lang-head">Początkujący</h3>
+                            <LangBar width={100} lang={"javascript"}/>
+                            <h3 className="lang-info">JavaScript</h3>
+                        </div>
+                        <div className="lang-row" id="html">
+                            <h3 className="lang-head">Początkujący</h3>
+                            <LangBar width={149} lang={"html"}/>
+                            <h3 className="lang-info">Html</h3>
+                        </div>
                     </div>
                     <div className="img-box-left">
 
