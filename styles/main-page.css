@@ -253,7 +253,7 @@ a {
 }
 
 .img-box-left{
-    width: 492px;
+    width: 417px;
     height: 571px;
     margin: 125px 0 125px 118px;
     float: left;
@@ -307,7 +307,7 @@ a {
 
 .game
 {
-    background: url("../img/birds-land.png");
+    background: url("../img/birds-land.png") no-repeat;
     width: 417px;
     height: 572px;
     cursor: crosshair;
