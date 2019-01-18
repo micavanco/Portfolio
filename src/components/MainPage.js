@@ -81,10 +81,10 @@ class MainPage extends Component{
                             <LangBar width={100} lang={"javascript"}/>
                             <h3 className="lang-info">JavaScript</h3>
                         </div>
-                        <div className="lang-row" id="html">
+                        <div className="lang-row" id="css">
                             <h3 className="lang-head">Średni</h3>
-                            <LangBar width={61} lang={"html"}/>
-                            <h3 className="lang-info">Html</h3>
+                            <LangBar width={81} lang={"css"}/>
+                            <h3 className="lang-info">CSS</h3>
                         </div>
                     </div>
                     <HuntingGame/>

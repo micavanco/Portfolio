@@ -313,9 +313,25 @@ a {
     cursor: crosshair;
 }
 
-#bird1
+#bird1flip, #bird2flip, #bird3flip, #bird4flip, #bird5flip
 {
-    transition: margin 3000ms ease-in-out;
+    transition: left 3000ms ease-in-out;
+}
+
+#bird1, #bird2, #bird3, #bird4, #bird5
+{
+    transition: left 3000ms ease-in-out;
+}
+
+#score, #score-info
+{
+    white-space: nowrap;
+}
+
+#score-info
+{
+    float: right;
+    font-size: 12px;
 }
 
 /* -------------- FOOTER SECTION ------------------- */
