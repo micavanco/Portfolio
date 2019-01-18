@@ -48,7 +48,6 @@ class HuntingGame extends Component{
                     highscore = score;
 
                 this.setState({gameStatus: false});
-                console.log("Game Over");
                 document.getElementById("menu-game").style.display = "flex";
                 document.getElementById("menu-game").innerText = "Kliknij aby rozpocząć grę\nNajwyższy wynik: "+
                     highscore;
@@ -235,7 +234,6 @@ class HuntingGame extends Component{
             current_number = Math.floor(Math.random()*5);
         }
         el.style.left = bird.x.toString()+"px";
-        console.log(bird.x+"  name: "+bird.name);
     }
 
     flyToLeft(){
@@ -258,7 +256,6 @@ class HuntingGame extends Component{
             current_number2 = Math.floor(Math.random()*5);
         }
         el.style.left = bird.x.toString()+"px";
-        console.log(bird.x+"  name: "+bird.name);
     }
 
     onTimer()
@@ -282,7 +279,6 @@ class HuntingGame extends Component{
                 highscore = score;
 
             this.setState({gameStatus: false});
-            console.log("Game Over");
             document.getElementById("menu-game").style.display = "flex";
             document.getElementById("menu-game").innerText = "Kliknij aby rozpocząć grę\nNajwyższy wynik: "+
                 highscore;
