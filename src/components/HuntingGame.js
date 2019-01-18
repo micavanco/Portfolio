@@ -5,17 +5,19 @@ let bird1 = {x: 0, name: "bird1"};
 let bird2 = {x: 0, name: "bird2"};
 let bird3 = {x: 0, name: "bird3"};
 let bird4 = {x: 0, name: "bird4"};
-let bird5 = {x: 0, name: "bird4"};
+let bird5 = {x: 0, name: "bird5"};
 let bird1flip = {x: 0, name: "bird1flip"};
 let bird2flip = {x: 0, name: "bird2flip"};
 let bird3flip = {x: 0, name: "bird3flip"};
 let bird4flip = {x: 0, name: "bird4flip"};
-let bird5flip = {x: 0, name: "bird4flip"};
+let bird5flip = {x: 0, name: "bird5flip"};
 
 let current_number = 0;
 let current_number2 = 3;
 
 let score = 0;
+let highscore = 0;
+let time = 180;
 
 const birds_tab_left = [bird1, bird2, bird3, bird4, bird5];
 const birds_tab_right =  [bird1flip, bird2flip, bird3flip, bird4flip, bird5flip];
@@ -37,13 +39,19 @@ class HuntingGame extends Component{
         document.addEventListener("keydown", (e)=>{
             if(e.keyCode == 81 && this.state.gameStatus)
             {
-                score = 0;
                 document.getElementById("score").innerText = "0";
                 clearInterval(this.state.interval1);
                 clearInterval(this.state.interval2);
-                this.state.gameStatus = false;
+                clearInterval(this.state.timer);
+
+                if(highscore < score)
+                    highscore = score;
+
+                this.setState({gameStatus: false});
                 console.log("Game Over");
                 document.getElementById("menu-game").style.display = "flex";
+                document.getElementById("menu-game").innerText = "Kliknij aby rozpocząć grę\nNajwyższy wynik: "+
+                    highscore;
             }
         });
     }
@@ -54,9 +62,14 @@ class HuntingGame extends Component{
         if(!this.state.gameStatus)
         {
             document.getElementById("menu-game").style.display = "none";
-            this.state.gameStatus = true;
-            this.state.interval1 = setInterval(this.flyToRight, 3100);
-            this.state.interval2 = setInterval(this.flyToLeft, 3100);
+            document.getElementById("game-time").innerText = "3:00";
+            score = 0;
+            time = 180;
+            this.setState({gameStatus: true,
+                interval1: setInterval(this.flyToRight, 3100),
+                interval2: setInterval(this.flyToLeft, 3100),
+                timer: setInterval(this.onTimer.bind(this), 1000)
+            });
         }
     }
 
@@ -153,8 +166,9 @@ class HuntingGame extends Component{
             left: -71px;
             top: 30px;
         `;
-
-        const Menu = styled.div`
+        let Menu = null;
+        if(!this.state.gameStatus)
+        Menu = styled.div`
             width: inherit;
             height: inherit;
             position: absolute;
@@ -166,6 +180,11 @@ class HuntingGame extends Component{
             font-weight: 600;
             z-index: 9;
         `;
+        else
+            Menu = styled.div`
+            display: none;
+        `;
+
 
         const Score = styled.div`
             position: absolute;
@@ -177,7 +196,7 @@ class HuntingGame extends Component{
         return(
             <div className="img-box-left" onClick={this.onClickStartGame.bind(this)} id="img-box-left">
                 <Menu id="menu-game">Kliknij aby rozpocząć grę</Menu>
-                <Score>Liczba punktów: <span id="score">0</span><span id="score-info">Wciśnij q by zakończyć</span></Score>
+                <Score>Liczba punktów: <span id="score">0</span><span id="game-time">3:00</span><span id="score-info">Wciśnij q by zakończyć</span></Score>
                 <Game src="../../img/birds-land.png" id="birds-land" className="game">
                     <Bird1flip id="bird1flip" onClick={this.onBirdClick.bind(this)}/>
                     <Bird2flip id="bird2flip" onClick={this.onBirdClick.bind(this)}/>
@@ -194,6 +213,8 @@ class HuntingGame extends Component{
         );
     }
 
+
+
     flyToRight(){
 
         let bird = birds_tab_right[current_number];
@@ -202,7 +223,7 @@ class HuntingGame extends Component{
         if(bird.x === -71)
         {
             el.style.display = "block";
-            el.style.top = (Math.floor(Math.random() * 400)+30).toString()+"px";
+            el.style.top = (Math.floor(Math.random() * 450)+30).toString()+"px";
             bird.x = -70;
         }
         else if(bird.x < 417 && bird.x > -71)
@@ -238,6 +259,34 @@ class HuntingGame extends Component{
         }
         el.style.left = bird.x.toString()+"px";
         console.log(bird.x+"  name: "+bird.name);
+    }
+
+    onTimer()
+    {
+        time--;
+        let min = Math.floor(time/60);
+        if(min < 0) min=0;
+        let sec = time-min*60;
+        if(sec < 10)
+            document.getElementById("game-time").innerText = min+":0"+sec;
+        else
+            document.getElementById("game-time").innerText = min+":"+sec;
+        if(time === 0)
+        {
+            clearInterval(this.state.timer);
+            document.getElementById("score").innerText = "0";
+            clearInterval(this.state.interval1);
+            clearInterval(this.state.interval2);
+
+            if(highscore < score)
+                highscore = score;
+
+            this.setState({gameStatus: false});
+            console.log("Game Over");
+            document.getElementById("menu-game").style.display = "flex";
+            document.getElementById("menu-game").innerText = "Kliknij aby rozpocząć grę\nNajwyższy wynik: "+
+                highscore;
+        }
     }
 
     onBirdClick(e)

@@ -334,6 +334,12 @@ a {
     font-size: 12px;
 }
 
+#game-time
+{
+    margin-left: 50px;
+    color: #DA9A2A;
+}
+
 /* -------------- FOOTER SECTION ------------------- */
 
 .footer{
