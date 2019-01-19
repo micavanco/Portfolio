@@ -226,11 +226,22 @@ a {
 
 #star-wars-head
 {
-    margin-top: -175px;
+    margin-top: -173px;
     margin-left: 370px;
     width: 48px;
     height: 20px;
     position: absolute;
+}
+
+#bullet
+{
+    height: 2px;
+    width: 5px;
+    background: red;
+    position: absolute;
+    margin-top: 410px;
+    margin-left: 1179px;
+    transition: margin 1s linear;
 }
 /* -----  Info Box right ---- */
 .info-box-right{
@@ -380,7 +391,7 @@ a {
     }
 
     40%{
-        border-bottom: 1px solid rgba(29, 29, 29, 0.3) ;
+        border-bottom: 1px solid rgba(29, 29, 29, 0.1) ;
     }
 
     100%{
@@ -392,8 +403,8 @@ a {
 @keyframes fadeOut {
 
     0%{
-        transform: scale(0);
-        background: rgba(218, 154, 42, 0.9);
+        transform: scaleX(0) scaleY(0);
+        background: rgba(218, 154, 42, 0.3);
         border-radius: 20px;
     }
 
@@ -416,7 +427,7 @@ a {
     }
 
     100%{
-        transform: scale(1.5);
+        transform: scaleX(1.2) scaleY(1.9);
         background: rgba(218, 154, 42, 0);
     }
 

@@ -34,7 +34,7 @@ class MainPage extends Component{
                         </div>
                         <img src="../../img/face.png" id="face"/>
                     </div>
-                    <div className="info-box-left">
+                    <div className="info-box-left" id="info-box-left" >
                         <h1 className="info-box-left-head">O mnie</h1>
                         <h3 className="info-box-left-text">Absolwent kierunku Elektrotechnika, wydziału elektrycznego Politechniki Wrocławskiej.
                             Moje zainteresowanie programowaniem rozpoczęło się w trakcie studiów, podczas odbywania kursu
@@ -59,6 +59,7 @@ class MainPage extends Component{
                         <img src="../../img/star-wars.png" id="star-wars"/>
                         <img src="../../img/star-wars-head.png" id="star-wars-head"/>
                     </div>
+                    <div id="bullet"></div>
                     <div className="info-box-right">
                         <h1 className="info-box-right-head">Doświadczenie</h1>
                         <div className="lang-row" id="cplus" >
@@ -128,6 +129,38 @@ class MainPage extends Component{
                 </div>
             </div>
         );
+    }
+
+    componentDidMount() {
+        document.getElementById("info-box-left").addEventListener("mousemove", (e)=>{
+            let rect = document.getElementById("info-box-left").getBoundingClientRect();
+            let x = 1200-(e.screenX-rect.left);
+            let y = 342-(e.screenY-rect.top);
+            let deg = Math.atan(y/x)*57.29577;
+            console.log("x = "+x.toString()+" y= "+y.toString()+" deg = "+deg.toString());
+            document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
+        });
+
+        document.getElementById("info-box-left").addEventListener("click", (e)=>{
+            let rect = document.getElementById("info-box-left").getBoundingClientRect();
+            let x = 1060-(e.screenX-rect.left);
+            let y = 342-(e.screenY-rect.top);
+            let deg = Math.atan(y/x)*57.29577;
+            let bullet = document.getElementById("bullet");
+            bullet.style.opacity = "1";
+            bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
+            bullet.style.marginLeft = (1175-x).toString()+"px";
+            bullet.style.marginTop = (410-y).toString()+"px";
+            setTimeout(() =>{
+                bullet.style.display = "none";
+                bullet.style.marginLeft = "1175px";
+                bullet.style.marginTop = "410px";
+            }, 1000);
+            setTimeout(()=>{
+                bullet.style.display = "block";
+                bullet.style.opacity = "0";
+                },1100);
+        });
     }
 
 }
