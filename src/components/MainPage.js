@@ -10,15 +10,15 @@ class MainPage extends Component{
                 {/* Header section */}
                 <header className="header">
                         <div className="logo-container">
-                            <a href="#" className="logo">Olech</a>
+                            <a href="" className="logo">Olech</a>
                         </div>
                         <img src="../../img/britainFlag.png" id="menu-flag-b"/>
                         <img src="../../img/polishFlag.png" id="menu-flag-p"/>
                         <div className="menu-btn" id="menu-btn-projects">>
-                            <a href="#">PROJEKTY</a>
+                            <a href="projects">PROJEKTY</a>
                         </div>
                         <div className="menu-btn" id="menu-btn-about">
-                            <a href="#">O MNIE</a>
+                            <a href="">O MNIE</a>
                         </div>
                 </header>
 
@@ -55,9 +55,10 @@ class MainPage extends Component{
                             komponowaniem muzyki elektronicznej w popularnych programach muzycznych typu DAW oraz uczę się
                             gry na pianinie.</h3>
                     </div>
-                    <div className="img-box-right">
+                    <div className="img-box-right" id="img-box-right">
                         <img src="../../img/star-wars.png" id="star-wars"/>
                         <img src="../../img/star-wars-head.png" id="star-wars-head"/>
+                        <div id="star-wars-plane"></div>
                     </div>
                     <div id="bullet"></div>
                     <div className="info-box-right">
@@ -90,7 +91,7 @@ class MainPage extends Component{
                     </div>
                     <HuntingGame/>
                     <div className="info-box-left">
-                            <h1 className="info-box-left-head">Doświadczenie</h1>
+                            <h1 className="info-box-left-head info-box-left-head2">Doświadczenie</h1>
                             <div className="lang-row" id="assembler" >
                                 <h3 className="lang-head">Początkujący</h3>
                                 <LangBar width={20} lang={"assembler"}/>
@@ -118,48 +119,133 @@ class MainPage extends Component{
                             </div>
                     </div>
 
-                    <div className="img-box-right">
+                    <div className="img-box-right img-box-right-border">
+                        <h1 className="info-box-right-head">Kursy</h1>
+                        <img src="../../img/diploma-logo.png" id="diploma"/>
+                    </div>
 
+                    <div className="info-box-left" style={{height: 360}}>
+                        <h1 className="info-box-left-head">Kontakt</h1>
+                        <div className="lang-row">
+                            <h3 className="lang-head" style={{width:100, paddingTop: 4}}>E-mail:</h3>
+                            <h3 className="lang-info">michal.olech.mail@gmail.com</h3>
+                        </div>
+                        <div className="lang-row">
+                            <h3 className="lang-head">Numer telefonu:</h3>
+                            <h3 className="lang-info">513514703</h3>
+                        </div>
+                    </div>
+
+                    <div className="img-box-right img-box-right-border" style={{height: 360}}>
+                        <h1 className="info-box-right-head">Linki</h1>
+                        <div className="menu-btn btn-links btn-align" style={{background: "#B0B0B0"}}>
+                            <a target="_blank" rel="noopener noreferrer"
+                               href="https://github.com/micavanco">GitHub</a>
+                        </div>
+                        <div className="menu-btn btn-links btn-align" style={{background: "#DA9A2A"}}>
+                            <a href="">LinkedIn</a>
+                        </div>
                     </div>
                 </div>
 
                 {/* Footer section */}
                 <div className="footer">
-                    <div></div>
+                    <div className="logo-container" style={{float: "left"}}>
+                        <a href="" className="logo">Olech</a>
+                    </div>
+                    <div className="footer-container">
+                        <div className="footer-container-contact">
+                            <p>E-mail:</p><p style={{float: "right", fontWeight: 600}}>michal.olech.mail@gmail.com</p>
+                            <p style={{clear: "left"}}>Telefon:</p><p style={{float: "right", fontWeight: 600}}>513514703</p>
+                        </div>
+                        <div id="footer-copy">&copy; 2019 Michał Olech</div>
+                    </div>
                 </div>
             </div>
         );
     }
 
     componentDidMount() {
+        let isOn = false;
         document.getElementById("info-box-left").addEventListener("mousemove", (e)=>{
-            let rect = document.getElementById("info-box-left").getBoundingClientRect();
-            let x = 1200-(e.screenX-rect.left);
-            let y = 342-(e.screenY-rect.top);
-            let deg = Math.atan(y/x)*57.29577;
-            console.log("x = "+x.toString()+" y= "+y.toString()+" deg = "+deg.toString());
-            document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
+            if(document.body.clientWidth > 1415)
+            {
+                let rect = document.getElementById("info-box-left").getBoundingClientRect();
+                let x = 1200-(e.screenX-rect.left);
+                let y = 342-(e.screenY-rect.top);
+                let deg = Math.atan(y/x)*57.29577;
+                //console.log("x = "+x.toString()+" y= "+y.toString()+" deg = "+deg.toString());
+                document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
+                x = 1060-(e.screenX-rect.left);
+                y = 342-(e.screenY-rect.top);
+                deg = Math.atan(y/x)*57.29577;
+                let bullet = document.getElementById("bullet");
+                bullet.style.opacity = "1";
+                bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
+                bullet.style.marginLeft = (1172-x).toString()+"px";
+                bullet.style.marginTop = (355-y).toString()+"px";
+                if(!isOn)
+                {
+                    isOn = true;
+                    setTimeout(() =>{
+                        bullet.style.display = "none";
+                        bullet.style.marginLeft = "1172px";
+                        bullet.style.marginTop = "355px";
+                    }, 1400);
+                    setTimeout(()=>{
+                        bullet.style.display = "block";
+                        bullet.style.opacity = "0";
+                        isOn = false;
+                    },1500);
+                }
+            }
         });
 
-        document.getElementById("info-box-left").addEventListener("click", (e)=>{
-            let rect = document.getElementById("info-box-left").getBoundingClientRect();
-            let x = 1060-(e.screenX-rect.left);
-            let y = 342-(e.screenY-rect.top);
-            let deg = Math.atan(y/x)*57.29577;
-            let bullet = document.getElementById("bullet");
-            bullet.style.opacity = "1";
-            bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
-            bullet.style.marginLeft = (1175-x).toString()+"px";
-            bullet.style.marginTop = (410-y).toString()+"px";
-            setTimeout(() =>{
-                bullet.style.display = "none";
-                bullet.style.marginLeft = "1175px";
-                bullet.style.marginTop = "410px";
-            }, 1000);
-            setTimeout(()=>{
-                bullet.style.display = "block";
-                bullet.style.opacity = "0";
-                },1100);
+        document.getElementById("star-wars-plane").addEventListener("click", (e)=>{
+            if(document.body.clientWidth > 1415)
+            {
+                let bullet = document.getElementById("bullet");
+                let rect = e.target.getBoundingClientRect();
+                let x = 405-(e.screenX-rect.left);
+                let y = 342-(e.screenY-rect.top);
+                let deg = Math.atan(y/x)*57.29577;
+                bullet.style.opacity = "1";
+                bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
+                bullet.style.marginLeft = (1172-x).toString()+"px";
+                bullet.style.marginTop = (355-y).toString()+"px";
+                document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
+                setTimeout(() =>{
+                    bullet.style.display = "none";
+                    bullet.style.marginLeft = "1172px";
+                    bullet.style.marginTop = "355px";
+                }, 700);
+                setTimeout(()=>{
+                    bullet.style.display = "block";
+                    bullet.style.opacity = "0";
+                },800);
+            }
+            else if(document.body.clientWidth < 1332)
+            {
+                let bullet = document.getElementById("bullet");
+                let rect = e.target.getBoundingClientRect();
+                let x = 405-(e.screenX-rect.left);
+                let y = 342-(e.screenY-rect.top);
+                let deg = Math.atan(y/x)*57.29577;
+                bullet.style.opacity = "1";
+                bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
+                bullet.style.marginLeft = (500-x).toString()+"px";
+                bullet.style.marginTop = (1006-y).toString()+"px";
+                document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
+                setTimeout(() =>{
+                    bullet.style.display = "none";
+                    bullet.style.marginLeft = "500px";
+                    bullet.style.marginTop = "1006px";
+                }, 700);
+                setTimeout(()=>{
+                    bullet.style.display = "block";
+                    bullet.style.opacity = "0";
+                },800);
+            }
         });
     }
 
