@@ -14,12 +14,8 @@ class MainPage extends Component{
                         </div>
                         <img src="../../img/britainFlag.png" id="menu-flag-b"/>
                         <img src="../../img/polishFlag.png" id="menu-flag-p"/>
-                        <div className="menu-btn" id="menu-btn-projects">>
-                            <a href="projects">PROJEKTY</a>
-                        </div>
-                        <div className="menu-btn" id="menu-btn-about">
-                            <a href="">O MNIE</a>
-                        </div>
+                        <a className="menu-btn" id="menu-btn-projects" href="projects">PROJEKTY</a>
+                        <a className="menu-btn" id="menu-btn-about" href="">O MNIE</a>
                 </header>
 
                 {/* Whole website content */}
@@ -138,13 +134,10 @@ class MainPage extends Component{
 
                     <div className="img-box-right img-box-right-border" style={{height: 360}}>
                         <h1 className="info-box-right-head">Linki</h1>
-                        <div className="menu-btn btn-links btn-align" style={{background: "#B0B0B0"}}>
-                            <a target="_blank" rel="noopener noreferrer"
-                               href="https://github.com/micavanco">GitHub</a>
-                        </div>
-                        <div className="menu-btn btn-links btn-align" style={{background: "#DA9A2A"}}>
-                            <a href="">LinkedIn</a>
-                        </div>
+                        <a className="menu-btn btn-links btn-align" style={{background: "#B0B0B0"}}
+                             target="_blank" rel="noopener noreferrer"
+                             href="https://github.com/micavanco">GitHub</a>
+                        <a className="menu-btn btn-links btn-align" style={{background: "#DA9A2A"}} href="">LinkedIn</a>
                     </div>
                 </div>
 
@@ -191,12 +184,12 @@ class MainPage extends Component{
                         bullet.style.display = "none";
                         bullet.style.marginLeft = "1172px";
                         bullet.style.marginTop = "355px";
-                    }, 1400);
+                    }, 1000);
                     setTimeout(()=>{
                         bullet.style.display = "block";
                         bullet.style.opacity = "0";
                         isOn = false;
-                    },1500);
+                    },1100);
                 }
             }
         });

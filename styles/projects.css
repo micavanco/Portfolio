@@ -1,0 +1,66 @@
+
+
+/*
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Montserrat', sans-serif;
+*/
+/*
+    COLORS:
+    White:#F5F5F5
+    Gold: #DA9A2A
+    Black: #1D1D1D
+    Grey: #9B9B9B
+    Grey light: #B0B0B0
+
+ */
+
+/* -------------- OVERALL SECTION ------------------- */
+.menu-container
+{
+    font-family: 'Roboto Slab', serif;
+    margin: 30px 0 57px 0;
+    height: 620px;
+    width: 220px;
+    background: #9B9B9B;
+    float: left;
+}
+
+.menu-header
+{
+    font-size: 24px;
+    border-bottom: 1px solid #707070;
+    padding-top: 12px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.menu-options
+{
+    margin-top: 28px;
+}
+
+.menu-options-button
+{
+    font-size: 24px;
+    padding: 8px 32px;
+    cursor: pointer;
+}
+
+.menu-options-button:hover
+{
+    background: #b1b1b1;
+}
+
+
+/* -------------- PROJECT SECTION ------------------- */
+
+.project-container
+{
+    margin: 30px 0 57px 134px;
+    width: 1032px;
+    height: 620px;
+    background: #F5F5F5;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    float: left;
+}
