@@ -13,7 +13,8 @@ class ProjectWindow extends Component{
 
         this.state = {
             window_type: "description",
-            picked_img: 0
+            picked_img: 0,
+            fullscreen_image: null
         };
         prev_img = 0;
     }
@@ -60,7 +61,9 @@ class ProjectWindow extends Component{
                 <div className="project-container">
                     <div className="project-header">{this.props.project.header}</div>
                     <div className="image-window">
-                        <img src={"../../img/projects/"+this.props.project.images[this.state.picked_img]} id="main-image"/>
+                        <img src={"../../img/projects/"+this.props.project.images[this.state.picked_img]}
+                             onClick={this.onFullscreenImage.bind(this)}
+                             id="main-image"/>
                     </div>
                     <div id="images-box">
                         {this.props.project.images.map(o=>{
@@ -75,6 +78,11 @@ class ProjectWindow extends Component{
                                             className="small-image" key={count} id={count++} ></img>
                         })}
                     </div>
+                    <div id="fullscreen-image-content">{this.state.fullscreen_image}
+                        <div id="exit-cross-container" onClick={this.onFullscreenExit}>
+                            <div id="exit-cross"></div>
+                        </div>
+                    </div>
                         <div className="project-navigation align-left-arrow" onClick={()=>this.setState({window_type: "description"})}>
                             <p>OPIS</p>
                             <div className="project-arrow">
@@ -88,6 +96,17 @@ class ProjectWindow extends Component{
         }
 
         return(content);
+    }
+
+    onFullscreenExit()
+    {
+        document.getElementById("fullscreen-image-content").style.display="none"
+    }
+
+    onFullscreenImage(e)
+    {
+        document.getElementById("fullscreen-image-content").style.display = "flex";
+        this.setState({fullscreen_image: <img id="fullscreen-image" src={"../../img/projects/"+this.props.project.images[this.state.picked_img]}/>});
     }
 
     onPickedImage(e)

@@ -6,6 +6,13 @@ let wasLoaded = false;
 
 class MainPage extends Component{
 
+    constructor(params)
+    {
+        super(params);
+
+        wasLoaded = false;
+    }
+
     render() {
         return(
             <div className="content">
