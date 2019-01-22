@@ -93,6 +93,7 @@
     font-weight: 600;
     font-size: 16px;
     padding: 12px 0 18px 0;
+    height: 125px;
 }
 
 .project-options-list
@@ -182,16 +183,20 @@
 {
     width: auto;
     height: 358px;
-    border: 1px solid black;
-    margin: 20px 125px;
+    border: 1px solid #9B9B9B;
+    margin: 20px 83px;
+    cursor: pointer;
 }
 
-.images-box
+#images-box
 {
     width: auto;
     height: 98px;
-    border: 1px solid black;
     margin: 20px 125px;
+    overflow: hidden;
+    display: flex;
+    justify-content:space-around;
+    cursor: pointer;
 }
 
 .align-left-arrow
@@ -211,4 +216,30 @@
 {
     transform: rotateZ(45deg);
     margin-left: -105px;
+}
+
+#main-image
+{
+    width: content-box;
+    height: 356px;
+}
+
+.small-image
+{
+    height: 55px;
+    margin-right: 2px;
+    width: 75px;
+    box-shadow: 0 10px 20px rgba(155, 155, 155, 0.4);
+}
+
+.small-image:hover
+{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(155, 155, 155, 0.2);
+}
+
+.small-image:active
+{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(155, 155, 155, 0.2);
 }

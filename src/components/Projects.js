@@ -19,10 +19,6 @@ class Projects extends Component{
         this.props.selectProject("norskmemo");
     }
 
-    onProjectChange(e)
-    {
-        console.log(e.target.className);
-    }
 
     render() {
 
@@ -41,7 +37,7 @@ class Projects extends Component{
 
                 {/* Whole website content */}
                 <div className="content-page">
-                    <MenuMain onProjectChange={this.onProjectChange}/>
+                    <MenuMain/>
                     <Project/>
                 </div>
 

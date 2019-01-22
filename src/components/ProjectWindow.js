@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import { selectProject } from "../actions";
 import {connect} from "react-redux";
 
+let count = 0;
+let prev_img = 0;
+
 class ProjectWindow extends Component{
 
     constructor(params)
@@ -9,13 +12,16 @@ class ProjectWindow extends Component{
         super(params);
 
         this.state = {
-            window_type: "description"
+            window_type: "description",
+            picked_img: 0
         };
+        prev_img = 0;
     }
 
     render() {
 
         let content = null;
+        count = 0;
 
         if(this.state.window_type === "description" && this.props.project)
         {
@@ -48,13 +54,27 @@ class ProjectWindow extends Component{
                     </div>
                 </div>
             </div>
-        }else
+        }else if(this.props.project)
         {
             content =
                 <div className="project-container">
-                    <div className="project-header">Analizator ruchu obiektów</div>
-                    <div className="image-window"></div>
-                    <div className="images-box"></div>
+                    <div className="project-header">{this.props.project.header}</div>
+                    <div className="image-window">
+                        <img src={"../../img/projects/"+this.props.project.images[this.state.picked_img]} id="main-image"/>
+                    </div>
+                    <div id="images-box">
+                        {this.props.project.images.map(o=>{
+                            if(count !=prev_img)
+                            return <img src={"../../img/projects/"+o}
+                                        onClick={this.onPickedImage.bind(this)}
+                                        className="small-image" key={count} id={count++} ></img>
+                            else
+                                return <img src={"../../img/projects/"+o}
+                                            style={{boxShadow:"0 10px 20px rgba(218, 154, 42, 0.2)"}}
+                                            onClick={this.onPickedImage.bind(this)}
+                                            className="small-image" key={count} id={count++} ></img>
+                        })}
+                    </div>
                         <div className="project-navigation align-left-arrow" onClick={()=>this.setState({window_type: "description"})}>
                             <p>OPIS</p>
                             <div className="project-arrow">
@@ -69,6 +89,15 @@ class ProjectWindow extends Component{
 
         return(content);
     }
+
+    onPickedImage(e)
+    {
+        document.getElementById(prev_img).style.boxShadow = "0 10px 20px rgba(155, 155, 155, 0.4)";
+        prev_img = e.target.id;
+        e.target.style.boxShadow = "0 10px 20px rgba(218, 154, 42, 0.2)";
+        this.setState({picked_img: e.target.id});
+    }
+
 }
 
 const mapStateToProps = (state) => {
