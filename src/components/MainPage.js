@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import LangBar from './LangBar';
 import HuntingGame from './HuntingGame';
 
+let wasLoaded = false;
+
 class MainPage extends Component{
 
     render() {
@@ -159,87 +161,91 @@ class MainPage extends Component{
     }
 
     componentDidMount() {
-        let isOn = false;
-        document.getElementById("info-box-left").addEventListener("mousemove", (e)=>{
-            if(document.body.clientWidth > 1415)
-            {
-                let rect = document.getElementById("info-box-left").getBoundingClientRect();
-                let x = 1200-(e.screenX-rect.left);
-                let y = 342-(e.screenY-rect.top);
-                let deg = Math.atan(y/x)*57.29577;
-                //console.log("x = "+x.toString()+" y= "+y.toString()+" deg = "+deg.toString());
-                document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
-                x = 1060-(e.screenX-rect.left);
-                y = 342-(e.screenY-rect.top);
-                deg = Math.atan(y/x)*57.29577;
-                let bullet = document.getElementById("bullet");
-                bullet.style.opacity = "1";
-                bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
-                bullet.style.marginLeft = (1172-x).toString()+"px";
-                bullet.style.marginTop = (355-y).toString()+"px";
-                if(!isOn)
+        if(!wasLoaded)
+        {
+            wasLoaded = true;
+            let isOn = false;
+            document.getElementById("info-box-left").addEventListener("mousemove", (e)=>{
+                if(document.body.clientWidth > 1415)
                 {
-                    isOn = true;
+                    let rect = document.getElementById("info-box-left").getBoundingClientRect();
+                    let x = 1200-(e.screenX-rect.left);
+                    let y = 342-(e.screenY-rect.top);
+                    let deg = Math.atan(y/x)*57.29577;
+                    //console.log("x = "+x.toString()+" y= "+y.toString()+" deg = "+deg.toString());
+                    document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
+                    x = 1060-(e.screenX-rect.left);
+                    y = 342-(e.screenY-rect.top);
+                    deg = Math.atan(y/x)*57.29577;
+                    let bullet = document.getElementById("bullet");
+                    bullet.style.opacity = "1";
+                    bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
+                    bullet.style.marginLeft = (1172-x).toString()+"px";
+                    bullet.style.marginTop = (355-y).toString()+"px";
+                    if(!isOn)
+                    {
+                        isOn = true;
+                        setTimeout(() =>{
+                            bullet.style.display = "none";
+                            bullet.style.marginLeft = "1172px";
+                            bullet.style.marginTop = "355px";
+                        }, 1000);
+                        setTimeout(()=>{
+                            bullet.style.display = "block";
+                            bullet.style.opacity = "0";
+                            isOn = false;
+                        },1100);
+                    }
+                }
+            });
+
+            document.getElementById("star-wars-plane").addEventListener("click", (e)=>{
+                if(document.body.clientWidth > 1415)
+                {
+                    let bullet = document.getElementById("bullet");
+                    let rect = e.target.getBoundingClientRect();
+                    let x = 405-(e.screenX-rect.left);
+                    let y = 342-(e.screenY-rect.top);
+                    let deg = Math.atan(y/x)*57.29577;
+                    bullet.style.opacity = "1";
+                    bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
+                    bullet.style.marginLeft = (1172-x).toString()+"px";
+                    bullet.style.marginTop = (355-y).toString()+"px";
+                    document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
                     setTimeout(() =>{
                         bullet.style.display = "none";
                         bullet.style.marginLeft = "1172px";
                         bullet.style.marginTop = "355px";
-                    }, 1000);
+                    }, 700);
                     setTimeout(()=>{
                         bullet.style.display = "block";
                         bullet.style.opacity = "0";
-                        isOn = false;
-                    },1100);
+                    },800);
                 }
-            }
-        });
-
-        document.getElementById("star-wars-plane").addEventListener("click", (e)=>{
-            if(document.body.clientWidth > 1415)
-            {
-                let bullet = document.getElementById("bullet");
-                let rect = e.target.getBoundingClientRect();
-                let x = 405-(e.screenX-rect.left);
-                let y = 342-(e.screenY-rect.top);
-                let deg = Math.atan(y/x)*57.29577;
-                bullet.style.opacity = "1";
-                bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
-                bullet.style.marginLeft = (1172-x).toString()+"px";
-                bullet.style.marginTop = (355-y).toString()+"px";
-                document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
-                setTimeout(() =>{
-                    bullet.style.display = "none";
-                    bullet.style.marginLeft = "1172px";
-                    bullet.style.marginTop = "355px";
-                }, 700);
-                setTimeout(()=>{
-                    bullet.style.display = "block";
-                    bullet.style.opacity = "0";
-                },800);
-            }
-            else if(document.body.clientWidth < 1332)
-            {
-                let bullet = document.getElementById("bullet");
-                let rect = e.target.getBoundingClientRect();
-                let x = 405-(e.screenX-rect.left);
-                let y = 342-(e.screenY-rect.top);
-                let deg = Math.atan(y/x)*57.29577;
-                bullet.style.opacity = "1";
-                bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
-                bullet.style.marginLeft = (500-x).toString()+"px";
-                bullet.style.marginTop = (1006-y).toString()+"px";
-                document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
-                setTimeout(() =>{
-                    bullet.style.display = "none";
-                    bullet.style.marginLeft = "500px";
-                    bullet.style.marginTop = "1006px";
-                }, 700);
-                setTimeout(()=>{
-                    bullet.style.display = "block";
-                    bullet.style.opacity = "0";
-                },800);
-            }
-        });
+                else if(document.body.clientWidth < 1332)
+                {
+                    let bullet = document.getElementById("bullet");
+                    let rect = e.target.getBoundingClientRect();
+                    let x = 405-(e.screenX-rect.left);
+                    let y = 342-(e.screenY-rect.top);
+                    let deg = Math.atan(y/x)*57.29577;
+                    bullet.style.opacity = "1";
+                    bullet.style.transform = "rotateZ("+deg.toString()+"deg)";
+                    bullet.style.marginLeft = (500-x).toString()+"px";
+                    bullet.style.marginTop = (1006-y).toString()+"px";
+                    document.getElementById("star-wars-head").style.transform = "rotateZ("+deg.toString()+"deg)";
+                    setTimeout(() =>{
+                        bullet.style.display = "none";
+                        bullet.style.marginLeft = "500px";
+                        bullet.style.marginTop = "1006px";
+                    }, 700);
+                    setTimeout(()=>{
+                        bullet.style.display = "block";
+                        bullet.style.opacity = "0";
+                    },800);
+                }
+            });
+        }
     }
 
 }

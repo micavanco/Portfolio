@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import MenuMain from './MenuMain';
 import Project from './ProjectWindow'
+import { selectProject } from "../actions";
 
 class Projects extends Component{
 
@@ -11,6 +15,8 @@ class Projects extends Component{
         this.state = {
             current_project: "movement_analyzer"
         };
+
+        this.props.selectProject("norskmemo");
     }
 
     onProjectChange(e)
@@ -19,6 +25,7 @@ class Projects extends Component{
     }
 
     render() {
+
         return(
             <div className="content">
                 {/* Header section */}
@@ -60,4 +67,9 @@ class Projects extends Component{
 
 }
 
-export default Projects;
+function mapDispatchToProps(dispatch) {
+
+    return bindActionCreators({selectProject}, dispatch);
+}
+
+export default connect(null ,mapDispatchToProps)(Projects);

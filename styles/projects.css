@@ -64,6 +64,7 @@
     border-radius: 20px;
     float: left;
     padding: 35px 111px 15px 111px;
+    transition: all 1s ease-in-out;
 }
 
 .project-header
@@ -124,7 +125,6 @@
     align-items: center;
     cursor: pointer;
     backface-visibility: hidden;
-    transition: all 400ms ease-in-out;
 }
 
 .project-navigation:hover > p
@@ -173,4 +173,42 @@
         transform: translateX(0);
     }
 
+}
+
+
+/* -------------- GALLERY SECTION ------------------- */
+
+.image-window
+{
+    width: auto;
+    height: 358px;
+    border: 1px solid black;
+    margin: 20px 125px;
+}
+
+.images-box
+{
+    width: auto;
+    height: 98px;
+    border: 1px solid black;
+    margin: 20px 125px;
+}
+
+.align-left-arrow
+{
+    margin-right: 92%;
+    margin-top: -100px;
+    justify-content: flex-end;
+}
+
+.rotated-arrow-top
+{
+    transform: rotateZ(-45deg);
+    margin-left: -105px;
+}
+
+.rotated-arrow-bottom
+{
+    transform: rotateZ(45deg);
+    margin-left: -105px;
 }

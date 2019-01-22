@@ -1,0 +1,13 @@
+{
+  "projects": [
+    {"tag": "norskmemo",
+     "header": "NorskMemo",
+     "description": "Aplikacja służąca do nauki języka norweskiego.",
+     "functioning": "Po zalogowaniu się zostaje odblokowana możliwość wczytania bazy danych (w tej wersji dostępny zasób: czasowniki i przysłówki). Zadaniem użytkownika jest przetłumaczenie danego wyrażenia po norwesku na angielski. Po zalogowaniu się zostaje odblokowana możliwość wczytania bazy danych (w tej wersji dostępny zasób: czasowniki i przysłówki). Zadaniem użytkownika jest przetłumaczenie danego wyrażenia po norwesku na angielski.",
+     "options_list": ["Zapis wyniku do pliku tekstowego: poprawnych i błędnych odpowiedzi.", "Eksport i import preferencji użytkownika (wymiary okna oraz rozmiar czcionki).", "Zmiana rozmiaru czcionki.", "Panel z przyciskiem odtwarzającym syntezator mowy danego wyrażenia norweskiego wraz z możliwością dostosowania natężenia dźwięku i balansu stereo. Użytkownik w każdej chwili ma możliwość schowania panelu za pomocą przycisków opcji w pasku menu.", "Opcja „Tylko do odczytu” dezaktywująca zapis do pliku tekstowego."],
+     "github": "https://github.com/micavanco",
+     "download": "../img/projects/norskmemo/download/NorskMemo.jar",
+     "images": ["../img/projects/norskmemo/norskmemo1.png", "../img/projects/norskmemo/norskmemo2.png", "../img/projects/norskmemo/norskmemo3.png", "../img/projects/norskmemo/norskmemo4.png"]
+    }
+  ]
+}
