@@ -19,7 +19,7 @@ class MenuMain extends Component{
             menu_options: null
         };
 
-        this.props.selectProject("norskmemo");
+        this.props.selectProject("movementanalyzer");
     }
 
     render() {
@@ -31,10 +31,11 @@ class MenuMain extends Component{
                      onMouseEnter={()=>isInside=true}
                      onMouseLeave={this.onMouseContainerLeave}><div className="menu-header" id="menu-header">Projekty</div>
                     {this.state.menu_options}
+                    <div id="menu-container-after"
+                         onMouseEnter={()=>isInside=true}>
+                    </div>
                 </div>
-                <div id="menu-container-after"
-                     onMouseEnter={()=>isInside=true}>
-                </div>
+                {/*    ----- STATIC WINDOW ------      */}
                 <div className="menu-header">Projekty</div>
                 <div className="menu-options">
                     <div className="menu-options-button" id="c-projects" onMouseEnter={this.onMouseOverElement.bind(this)}
@@ -64,7 +65,7 @@ class MenuMain extends Component{
         isInside2 =true;
         if(e.target.id === "c-projects")
         {
-            document.getElementById("menu-container-after").style.top = "210px";
+            document.getElementById("menu-container-after").style.top = "60px";
             document.getElementById("menu-header").innerText = "C++/C";
             this.setState({menu_options:
                     <div className="menu-options">
@@ -83,7 +84,7 @@ class MenuMain extends Component{
                     </div>});
         }else if(e.target.id === "java-projects")
         {
-            document.getElementById("menu-container-after").style.top = "258px";
+            document.getElementById("menu-container-after").style.top = "108px";
             document.getElementById("menu-header").innerText = "Java";
             this.setState({menu_options:
                     <div className="menu-options">
@@ -102,7 +103,7 @@ class MenuMain extends Component{
                     </div>});
         }else if(e.target.id === "embedded-projects")
         {
-            document.getElementById("menu-container-after").style.top = "305px";
+            document.getElementById("menu-container-after").style.top = "155px";
             document.getElementById("menu-header").innerText = "Embedded";
             this.setState({menu_options:
                     <div className="menu-options">
@@ -113,7 +114,7 @@ class MenuMain extends Component{
                     </div>});
         }else if(e.target.id === "react-projects")
         {
-            document.getElementById("menu-container-after").style.top = "355px";
+            document.getElementById("menu-container-after").style.top = "205px";
             document.getElementById("menu-header").innerText = "React";
             this.setState({menu_options:
                     <div className="menu-options">

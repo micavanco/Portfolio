@@ -36,7 +36,7 @@
     border-radius: 20px;
     position: absolute;
     display: none;
-    z-index: 10;
+    z-index: 11;
 }
 
 #menu-container-after
@@ -47,11 +47,13 @@
     height: 75px;
     background: #F5F5F5;
     border: 1px solid #707070;
-    left: -25px;
+    left: -287px;
     position: absolute;
     display: none;
-    transform: rotateZ(45deg);
     z-index: 9;
+    clip-path: polygon(0 0, 100% 0, 50% 50%, 0 100%);
+    transform: rotateZ(-45deg);
+    transition: all 200ms ease-in-out;
 }
 
 .menu-header
@@ -114,8 +116,10 @@
 .project-description
 {
     font-weight: 800;
-    font-size: 16px;
+    font-size: 14px;
     padding: 12px 0 18px 0;
+    height: 125px;
+    overflow-y: scroll;
 }
 
 .project-section-header
@@ -128,17 +132,20 @@
 .project-section-functioning
 {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     padding: 12px 0 18px 0;
-    height: 125px;
+    height: 100px;
+    overflow-y: scroll;
 }
 
 .project-options-list
 {
     font-weight: 600;
     font-style: italic;
-    font-size: 16px;
+    font-size: 14px;
     padding: 12px 0 18px 20px;
+    overflow-y: scroll;
+    height: 110px;
 }
 
 .links-box
@@ -283,7 +290,7 @@
 
 #fullscreen-image-content
 {
-    display: none;
+    display: flex;
     position: absolute;
     width: 100%;
     height: 100%;

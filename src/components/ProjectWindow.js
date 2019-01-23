@@ -78,11 +78,7 @@ class ProjectWindow extends Component{
                                             className="small-image" key={count} id={count++} ></img>
                         })}
                     </div>
-                    <div id="fullscreen-image-content">{this.state.fullscreen_image}
-                        <div id="exit-cross-container" onClick={this.onFullscreenExit}>
-                            <div id="exit-cross"></div>
-                        </div>
-                    </div>
+                    {this.state.fullscreen_image}
                         <div className="project-navigation align-left-arrow" onClick={()=>this.setState({window_type: "description"})}>
                             <p>OPIS</p>
                             <div className="project-arrow">
@@ -100,13 +96,18 @@ class ProjectWindow extends Component{
 
     onFullscreenExit()
     {
-        document.getElementById("fullscreen-image-content").style.display="none"
+        this.setState({fullscreen_image: null});
     }
 
-    onFullscreenImage(e)
+    onFullscreenImage()
     {
-        document.getElementById("fullscreen-image-content").style.display = "flex";
-        this.setState({fullscreen_image: <img id="fullscreen-image" src={"../../img/projects/"+this.props.project.images[this.state.picked_img]}/>});
+        this.setState({fullscreen_image:
+                <div id="fullscreen-image-content"><img id="fullscreen-image" src={"../../img/projects/"+this.props.project.images[this.state.picked_img]}/>
+                    <div id="exit-cross-container" onClick={this.onFullscreenExit.bind(this)}>
+                        <div id="exit-cross"></div>
+                    </div>
+                </div>
+                });
     }
 
     onPickedImage(e)
