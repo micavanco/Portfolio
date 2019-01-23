@@ -25,6 +25,35 @@
     float: left;
 }
 
+#menu-container
+{
+    font-family: 'Roboto Slab', serif;
+    margin: 0 0 57px 250px;
+    height: 620px;
+    width: 220px;
+    background: #F5F5F5;
+    border: 1px solid #707070;
+    border-radius: 20px;
+    position: absolute;
+    display: none;
+    z-index: 10;
+}
+
+#menu-container-after
+{
+    content: "";
+    margin: 0 0 57px 250px;
+    width: 75px;
+    height: 75px;
+    background: #F5F5F5;
+    border: 1px solid #707070;
+    left: -25px;
+    position: absolute;
+    display: none;
+    transform: rotateZ(45deg);
+    z-index: 9;
+}
+
 .menu-header
 {
     font-size: 24px;
@@ -46,7 +75,15 @@
     cursor: pointer;
 }
 
-.menu-options-button:hover
+.menu-options-button2
+{
+    font-family: 'Montserrat', sans-serif;
+    padding: 18px 32px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.menu-options-button:hover, .menu-options-button2:hover
 {
     background: #b1b1b1;
 }

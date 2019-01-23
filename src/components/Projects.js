@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import MenuMain from './MenuMain';
 import Project from './ProjectWindow'
-import { selectProject } from "../actions";
+
 
 class Projects extends Component{
 
@@ -16,7 +14,6 @@ class Projects extends Component{
             current_project: "movement_analyzer"
         };
 
-        this.props.selectProject("norskmemo");
     }
 
 
@@ -63,9 +60,5 @@ class Projects extends Component{
 
 }
 
-function mapDispatchToProps(dispatch) {
+export default Projects;
 
-    return bindActionCreators({selectProject}, dispatch);
-}
-
-export default connect(null ,mapDispatchToProps)(Projects);
