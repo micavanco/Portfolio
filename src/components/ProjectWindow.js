@@ -4,6 +4,8 @@ import {connect} from "react-redux";
 
 let count = 0;
 let prev_img = 0;
+let prev_name = 0;
+let picked_img = 0;
 
 class ProjectWindow extends Component{
 
@@ -17,12 +19,22 @@ class ProjectWindow extends Component{
             fullscreen_image: null
         };
         prev_img = 0;
+        if(this.props.project)
+        prev_name = this.this.props.project.header;
     }
 
     render() {
 
         let content = null;
         count = 0;
+        picked_img = this.state.picked_img;
+
+        if(this.props.project && this.props.project.header !== prev_name )
+        {
+            prev_img = 0;
+            picked_img = 0;
+            prev_name = this.props.project.header;
+        }
 
         if(this.state.window_type === "description" && this.props.project)
         {
@@ -61,13 +73,13 @@ class ProjectWindow extends Component{
                 <div className="project-container">
                     <div className="project-header">{this.props.project.header}</div>
                     <div className="image-window">
-                        <img src={"../../img/projects/"+this.props.project.images[this.state.picked_img]}
+                        <img src={"../../img/projects/"+this.props.project.images[picked_img]}
                              onClick={this.onFullscreenImage.bind(this)}
                              id="main-image"/>
                     </div>
                     <div id="images-box">
                         {this.props.project.images.map(o=>{
-                            if(count !=prev_img)
+                            if(count != prev_img)
                             return <img src={"../../img/projects/"+o}
                                         onClick={this.onPickedImage.bind(this)}
                                         className="small-image" key={count} id={count++} ></img>
@@ -76,7 +88,8 @@ class ProjectWindow extends Component{
                                             style={{boxShadow:"0 10px 20px rgba(218, 154, 42, 0.2)"}}
                                             onClick={this.onPickedImage.bind(this)}
                                             className="small-image" key={count} id={count++} ></img>
-                        })}
+                        })
+                        }
                     </div>
                     {this.state.fullscreen_image}
                         <div className="project-navigation align-left-arrow" onClick={()=>this.setState({window_type: "description"})}>
@@ -101,8 +114,9 @@ class ProjectWindow extends Component{
 
     onFullscreenImage()
     {
+        if(picked_img !== this.state.picked_img) this.setState({picked_img: picked_img});
         this.setState({fullscreen_image:
-                <div id="fullscreen-image-content"><img id="fullscreen-image" src={"../../img/projects/"+this.props.project.images[this.state.picked_img]}/>
+                <div id="fullscreen-image-content"><img id="fullscreen-image" src={"../../img/projects/"+this.props.project.images[picked_img]}/>
                     <div id="exit-cross-container" onClick={this.onFullscreenExit.bind(this)}>
                         <div id="exit-cross"></div>
                     </div>
@@ -112,10 +126,16 @@ class ProjectWindow extends Component{
 
     onPickedImage(e)
     {
+
         document.getElementById(prev_img).style.boxShadow = "0 10px 20px rgba(155, 155, 155, 0.4)";
         prev_img = e.target.id;
         e.target.style.boxShadow = "0 10px 20px rgba(218, 154, 42, 0.2)";
         this.setState({picked_img: e.target.id});
+    }
+
+    onChangePickedImg(e)
+    {
+        this.setState({picked_img: e});
     }
 
 }

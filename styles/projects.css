@@ -85,9 +85,14 @@
     cursor: pointer;
 }
 
-.menu-options-button:hover, .menu-options-button2:hover
+.menu-options-button:hover
 {
     background: #b1b1b1;
+}
+
+.menu-options-button2:hover
+{
+    text-decoration: underline;
 }
 
 
@@ -227,9 +232,11 @@
 {
     width: auto;
     height: 358px;
-    border: 1px solid #9B9B9B;
     margin: 20px 83px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #images-box
@@ -306,6 +313,7 @@
 {
     position: relative;
     z-index: 11;
+    max-height: 720px;
 }
 
 #exit-cross-container
