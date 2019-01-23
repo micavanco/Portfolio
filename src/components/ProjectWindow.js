@@ -116,7 +116,7 @@ class ProjectWindow extends Component{
     {
         if(picked_img !== this.state.picked_img) this.setState({picked_img: picked_img});
         this.setState({fullscreen_image:
-                <div id="fullscreen-image-content"><img id="fullscreen-image" src={"../../img/projects/"+this.props.project.images[picked_img]}/>
+                <div id="fullscreen-image-content" style={{display: "flex"}}><img id="fullscreen-image" src={"../../img/projects/"+this.props.project.images[picked_img]}/>
                     <div id="exit-cross-container" onClick={this.onFullscreenExit.bind(this)}>
                         <div id="exit-cross"></div>
                     </div>

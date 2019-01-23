@@ -11,6 +11,7 @@ class MainPage extends Component{
         super(params);
 
         wasLoaded = false;
+
     }
 
     render() {
@@ -126,7 +127,7 @@ class MainPage extends Component{
 
                     <div className="img-box-right img-box-right-border">
                         <h1 className="info-box-right-head">Kursy</h1>
-                        <img src="../../img/diploma-logo.png" id="diploma"/>
+                        <img src="../../img/diploma-logo.png" id="diploma" onClick={this.onFullscreenImage.bind(this)}/>
                     </div>
 
                     <div className="info-box-left" style={{height: 360}}>
@@ -147,6 +148,12 @@ class MainPage extends Component{
                              target="_blank" rel="noopener noreferrer"
                              href="https://github.com/micavanco">GitHub</a>
                         <a className="menu-btn btn-links btn-align" style={{background: "#DA9A2A"}} href="">LinkedIn</a>
+                    </div>
+
+                    <div id="fullscreen-image-content"><img id="fullscreen-image" src={"../../img/diploma.png"}/>
+                        <div id="exit-cross-container" onClick={this.onFullscreenExit.bind(this)}>
+                            <div id="exit-cross"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -253,6 +260,16 @@ class MainPage extends Component{
                 }
             });
         }
+    }
+
+    onFullscreenExit()
+    {
+        document.getElementById("fullscreen-image-content").style.display = "none";
+    }
+
+    onFullscreenImage()
+    {
+        document.getElementById("fullscreen-image-content").style.display = "flex";
     }
 
 }
