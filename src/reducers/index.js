@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import { PROJECT_SELECTED } from '../actions';
-import axios from "axios";
 
 
 const projectReducer = (selectedProject = null, action)=>{

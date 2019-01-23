@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { selectProject } from "../actions";
 import {connect} from "react-redux";
 
 let count = 0;
